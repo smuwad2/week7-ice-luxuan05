@@ -2,6 +2,27 @@
     export default { 
         // Add Code Here to complete the task
         // Note: DO NOT USE "eval()". In security, "eval" is considered "evil"!!!
+        data(){
+            return{
+                x: 0,
+                y: 0,
+                selectedOp: "+",
+                operators: ["+", "-", "/", "*", "%"]
+            };
+        },
+        computed:{
+            result(){
+                const{x, y, selectedOp} = this;
+
+                switch(selectedOp){
+                    case "+": return x + y;
+                    case "-": return x - y;
+                    case "*": return x * y;
+                    case "/": return x / y;
+                    case "%": return x % y;
+                }
+            }
+        }
     }
 </script>
 
